@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shop the latest products at Shoply." />
-  <title>Shoply — Modern E-commerce</title>
+  <meta name="description" content="Premium black and gold e-commerce store." />
+  <title>SHOPLY — Black & Gold</title>
 
   <style>
     * {
@@ -14,14 +14,16 @@
     }
 
     :root {
-      --primary: #6c5ce7;
-      --primary-dark: #5544d1;
-      --dark: #151515;
-      --gray: #6b7280;
-      --light: #f7f7fb;
-      --white: #fff;
-      --border: #e8e8ef;
-      --success: #16a34a;
+      --black: #050505;
+      --black-2: #0d0d0d;
+      --black-3: #151515;
+      --gold: #d4af37;
+      --gold-light: #f1d675;
+      --gold-dark: #a88620;
+      --white: #ffffff;
+      --cream: #f5f0df;
+      --gray: #aaa;
+      --border: rgba(212, 175, 55, 0.25);
     }
 
     html {
@@ -30,8 +32,8 @@
 
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
-      color: var(--dark);
-      background: var(--white);
+      color: var(--white);
+      background: var(--black);
       line-height: 1.6;
     }
 
@@ -61,7 +63,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(5, 5, 5, 0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -75,33 +77,34 @@
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: -1px;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 2px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
       list-style: none;
     }
 
     .nav-links a {
+      color: #ddd;
       font-size: 14px;
       font-weight: 600;
-      transition: color 0.2s;
+      transition: .2s;
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--gold);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .icon-btn {
@@ -109,12 +112,19 @@
       height: 42px;
       border: 1px solid var(--border);
       border-radius: 50%;
-      background: var(--white);
+      background: transparent;
+      color: var(--white);
       cursor: pointer;
-      position: relative;
       display: grid;
       place-items: center;
       font-size: 18px;
+      transition: .2s;
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
     }
 
     .cart-count {
@@ -124,12 +134,12 @@
       width: 19px;
       height: 19px;
       border-radius: 50%;
-      background: var(--primary);
-      color: white;
+      background: var(--gold);
+      color: var(--black);
       font-size: 11px;
       display: grid;
       place-items: center;
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .menu-btn {
@@ -139,49 +149,57 @@
     /* ================= HERO ================= */
 
     .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
       background:
-        radial-gradient(circle at 80% 20%, rgba(108, 92, 231, 0.18), transparent 30%),
-        linear-gradient(135deg, #f8f7ff, #ffffff);
-      padding: 80px 0;
+        radial-gradient(
+          circle at 75% 35%,
+          rgba(212, 175, 55, .16),
+          transparent 32%
+        ),
+        linear-gradient(135deg, #050505, #111);
+      border-bottom: 1px solid var(--border);
     }
 
     .hero-grid {
-      min-height: 500px;
+      min-height: 600px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 60px;
+      gap: 70px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #eeecff;
-      color: var(--primary);
+      color: var(--gold);
+      border: 1px solid var(--border);
+      background: rgba(212,175,55,.07);
       border-radius: 30px;
-      padding: 7px 13px;
-      font-size: 12px;
+      padding: 7px 14px;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 18px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 5vw, 70px);
-      line-height: 1.05;
+      font-size: clamp(44px, 5vw, 72px);
+      line-height: 1.02;
       letter-spacing: -3px;
       margin-bottom: 22px;
-      max-width: 620px;
+      max-width: 650px;
     }
 
     .hero h1 span {
-      color: var(--primary);
+      color: var(--gold);
     }
 
     .hero p {
-      color: var(--gray);
+      color: #aaa;
       font-size: 17px;
       max-width: 520px;
       margin-bottom: 30px;
@@ -195,11 +213,11 @@
 
     .btn {
       border: none;
-      border-radius: 10px;
-      padding: 13px 22px;
-      font-weight: 700;
+      border-radius: 7px;
+      padding: 13px 23px;
+      font-weight: 800;
       cursor: pointer;
-      transition: 0.2s;
+      transition: .25s;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -207,23 +225,30 @@
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: white;
+      background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold),
+        var(--gold-dark)
+      );
+      color: #080808;
+      box-shadow: 0 8px 25px rgba(212,175,55,.15);
     }
 
     .btn-primary:hover {
-      background: var(--primary-dark);
       transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(212,175,55,.3);
     }
 
     .btn-outline {
-      border: 1px solid var(--border);
-      background: white;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
     }
 
     .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
+      background: var(--gold);
+      color: var(--black);
     }
 
     .hero-image {
@@ -231,31 +256,32 @@
     }
 
     .hero-image img {
-      height: 470px;
+      height: 480px;
       object-fit: cover;
-      border-radius: 30px;
-      box-shadow: 0 25px 60px rgba(30, 20, 80, 0.15);
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      filter: brightness(.75) saturate(.8);
+      box-shadow: 0 25px 70px rgba(0,0,0,.7);
     }
 
     .floating-card {
       position: absolute;
       bottom: 25px;
       left: -25px;
-      background: white;
+      background: #101010;
+      border: 1px solid var(--border);
       padding: 16px 20px;
-      border-radius: 15px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
       display: flex;
       align-items: center;
       gap: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.5);
     }
 
     .floating-icon {
       width: 42px;
       height: 42px;
-      background: #e8f9ed;
-      color: var(--success);
-      border-radius: 50%;
+      border: 1px solid var(--gold);
+      color: var(--gold);
       display: grid;
       place-items: center;
     }
@@ -272,14 +298,15 @@
     /* ================= FEATURES ================= */
 
     .features {
-      padding: 28px 0;
+      padding: 30px 0;
+      background: var(--black-2);
       border-bottom: 1px solid var(--border);
     }
 
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 25px;
     }
 
     .feature {
@@ -289,12 +316,13 @@
     }
 
     .feature-icon {
-      font-size: 25px;
+      color: var(--gold);
+      font-size: 24px;
     }
 
     .feature strong {
-      font-size: 13px;
       display: block;
+      font-size: 13px;
     }
 
     .feature span {
@@ -315,7 +343,7 @@
 
     .section-heading h2 {
       font-size: 36px;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
       margin-bottom: 8px;
     }
 
@@ -325,6 +353,10 @@
 
     /* ================= CATEGORIES ================= */
 
+    #categories {
+      background: var(--black);
+    }
+
     .category-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -333,20 +365,22 @@
 
     .category {
       height: 230px;
-      border-radius: 18px;
       overflow: hidden;
       position: relative;
-      background: #eee;
+      border: 1px solid var(--border);
+      background: var(--black-3);
     }
 
     .category img {
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s;
+      filter: brightness(.6) saturate(.7);
+      transition: .4s;
     }
 
     .category:hover img {
-      transform: scale(1.06);
+      transform: scale(1.07);
+      filter: brightness(.75) saturate(.9);
     }
 
     .category-overlay {
@@ -355,15 +389,22 @@
       display: flex;
       align-items: flex-end;
       padding: 22px;
-      color: white;
-      background: linear-gradient(transparent, rgba(0,0,0,.7));
+      background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+      );
     }
 
     .category-overlay h3 {
+      color: var(--gold);
       font-size: 21px;
     }
 
     /* ================= PRODUCTS ================= */
+
+    #products {
+      background: #0a0a0a;
+    }
 
     .products-header {
       display: flex;
@@ -374,11 +415,10 @@
 
     .products-header h2 {
       font-size: 32px;
-      letter-spacing: -1px;
     }
 
     .products-header a {
-      color: var(--primary);
+      color: var(--gold);
       font-weight: 700;
       font-size: 14px;
     }
@@ -391,57 +431,60 @@
 
     .product-card {
       border: 1px solid var(--border);
-      border-radius: 17px;
+      background: #101010;
       overflow: hidden;
-      background: white;
-      transition: 0.25s;
+      transition: .25s;
     }
 
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,.08);
+      border-color: rgba(212,175,55,.55);
+      box-shadow: 0 15px 40px rgba(0,0,0,.6);
     }
 
     .product-image {
       height: 260px;
       position: relative;
       overflow: hidden;
-      background: #f4f4f4;
+      background: #161616;
     }
 
     .product-image img {
       height: 100%;
       object-fit: cover;
-      transition: transform .4s;
+      filter: brightness(.72) saturate(.8);
+      transition: .4s;
     }
 
     .product-card:hover .product-image img {
       transform: scale(1.05);
+      filter: brightness(.85) saturate(.9);
     }
 
     .badge {
       position: absolute;
       top: 12px;
       left: 12px;
-      background: var(--dark);
-      color: white;
+      background: var(--gold);
+      color: #080808;
       padding: 5px 9px;
-      border-radius: 6px;
       font-size: 10px;
-      font-weight: 800;
+      font-weight: 900;
+      z-index: 2;
     }
 
     .heart {
       position: absolute;
       top: 10px;
       right: 10px;
-      border: none;
-      background: white;
+      border: 1px solid var(--border);
+      background: #0c0c0c;
+      color: white;
       width: 35px;
       height: 35px;
-      border-radius: 50%;
       cursor: pointer;
       font-size: 16px;
+      z-index: 2;
     }
 
     .product-info {
@@ -449,21 +492,25 @@
     }
 
     .product-category {
-      color: var(--gray);
-      font-size: 11px;
+      color: var(--gold);
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .5px;
+      letter-spacing: 1px;
     }
 
     .product-info h3 {
       font-size: 16px;
-      margin: 4px 0 8px;
+      margin: 5px 0 8px;
     }
 
     .rating {
-      color: #f59e0b;
+      color: var(--gold);
       font-size: 12px;
       margin-bottom: 10px;
+    }
+
+    .rating span {
+      color: #777;
     }
 
     .price {
@@ -474,11 +521,12 @@
     }
 
     .price strong {
-      font-size: 18px;
+      color: var(--gold);
+      font-size: 19px;
     }
 
     .old-price {
-      color: #999;
+      color: #777;
       text-decoration: line-through;
       font-size: 13px;
     }
@@ -486,85 +534,75 @@
     .add-cart {
       width: 100%;
       padding: 10px;
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 8px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      border-radius: 4px;
       font-weight: 700;
       cursor: pointer;
       transition: .2s;
     }
 
     .add-cart:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+      background: var(--gold);
+      color: #050505;
     }
 
     /* ================= PROMO ================= */
 
     .promo {
       padding: 0 0 80px;
+      background: #0a0a0a;
     }
 
     .promo-box {
-      border-radius: 25px;
-      background: var(--dark);
+      border: 1px solid var(--gold-dark);
+      background:
+        radial-gradient(
+          circle at 80% 50%,
+          rgba(212,175,55,.18),
+          transparent 35%
+        ),
+        #0d0d0d;
       color: white;
       padding: 55px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .promo-box::after {
-      content: "";
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      background: var(--primary);
-      opacity: .2;
-      right: -100px;
-      top: -150px;
-    }
-
-    .promo-content {
-      position: relative;
-      z-index: 1;
     }
 
     .promo-content small {
-      color: #aaa;
+      color: var(--gold);
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
     .promo-content h2 {
-      font-size: 38px;
+      font-size: 40px;
       margin: 8px 0;
     }
 
     .promo-content p {
-      color: #bbb;
+      color: #aaa;
     }
 
     /* ================= NEWSLETTER ================= */
 
     .newsletter {
-      background: var(--light);
+      background: var(--gold);
+      color: var(--black);
       text-align: center;
     }
 
     .newsletter h2 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 8px;
     }
 
     .newsletter p {
-      color: var(--gray);
+      color: #342b12;
       margin-bottom: 25px;
     }
 
@@ -574,8 +612,7 @@
       display: flex;
       background: white;
       padding: 5px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      border: 2px solid rgba(0,0,0,.25);
     }
 
     .newsletter-form input {
@@ -583,15 +620,23 @@
       border: none;
       outline: none;
       padding: 12px 14px;
+      color: #111;
       min-width: 0;
+    }
+
+    .newsletter-form .btn {
+      background: var(--black);
+      color: var(--gold);
+      box-shadow: none;
     }
 
     /* ================= FOOTER ================= */
 
     footer {
-      background: #111;
+      background: #030303;
       color: white;
       padding: 60px 0 25px;
+      border-top: 1px solid var(--border);
     }
 
     .footer-grid {
@@ -602,13 +647,14 @@
     }
 
     .footer-brand p {
-      color: #999;
+      color: #777;
       max-width: 280px;
       margin-top: 14px;
       font-size: 14px;
     }
 
     footer h4 {
+      color: var(--gold);
       margin-bottom: 15px;
     }
 
@@ -618,18 +664,18 @@
 
     footer li {
       margin-bottom: 9px;
-      color: #999;
+      color: #777;
       font-size: 14px;
     }
 
     footer li a:hover {
-      color: white;
+      color: var(--gold);
     }
 
     .copyright {
-      border-top: 1px solid #292929;
+      border-top: 1px solid #222;
       padding-top: 22px;
-      color: #777;
+      color: #555;
       font-size: 13px;
       text-align: center;
     }
@@ -640,15 +686,14 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: #171717;
-      color: white;
+      background: var(--gold);
+      color: #050505;
       padding: 13px 18px;
-      border-radius: 9px;
+      font-weight: 700;
       transform: translateY(100px);
       opacity: 0;
       transition: .3s;
       z-index: 2000;
-      font-size: 14px;
     }
 
     .toast.show {
@@ -669,6 +714,7 @@
 
       .hero-grid {
         grid-template-columns: 1fr;
+        padding: 50px 0;
       }
 
       .hero-image {
@@ -691,7 +737,7 @@
 
     @media (max-width: 600px) {
       .hero {
-        padding: 45px 0;
+        min-height: auto;
       }
 
       .hero h1 {
@@ -790,16 +836,17 @@
       <div class="container hero-grid">
 
         <div>
-          <div class="eyebrow">✦ New Collection 2026</div>
+          <div class="eyebrow">✦ Premium Collection</div>
 
           <h1>
-            Everything you need,
-            <span>all in one place.</span>
+            Luxury shopping,
+            <span>redefined.</span>
           </h1>
 
           <p>
-            Discover carefully selected products, exclusive deals,
-            and everyday essentials delivered right to your door.
+            Discover premium products, exclusive collections,
+            and exceptional deals — all in one sophisticated
+            shopping experience.
           </p>
 
           <div class="hero-buttons">
@@ -808,7 +855,7 @@
             </a>
 
             <a href="#categories" class="btn btn-outline">
-              Explore Categories
+              Explore Collection
             </a>
           </div>
         </div>
@@ -816,14 +863,14 @@
         <div class="hero-image">
           <img
             src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
-            alt="Modern fashion store"
+            alt="Luxury fashion store"
           />
 
           <div class="floating-card">
             <div class="floating-icon">✓</div>
             <div>
-              <strong>Free Shipping</strong>
-              <small>On orders over $50</small>
+              <strong>Premium Quality</strong>
+              <small>Curated just for you</small>
             </div>
           </div>
         </div>
@@ -837,18 +884,18 @@
       <div class="container feature-grid">
 
         <div class="feature">
-          <div class="feature-icon">🚚</div>
+          <div class="feature-icon">✦</div>
           <div>
-            <strong>Free Shipping</strong>
-            <span>Orders over $50</span>
+            <strong>Premium Quality</strong>
+            <span>Carefully selected products</span>
           </div>
         </div>
 
         <div class="feature">
-          <div class="feature-icon">↩️</div>
+          <div class="feature-icon">🚚</div>
           <div>
-            <strong>Easy Returns</strong>
-            <span>30-day returns</span>
+            <strong>Free Shipping</strong>
+            <span>On orders over $50</span>
           </div>
         </div>
 
@@ -856,12 +903,12 @@
           <div class="feature-icon">🔒</div>
           <div>
             <strong>Secure Payment</strong>
-            <span>100% protected</span>
+            <span>100% protected checkout</span>
           </div>
         </div>
 
         <div class="feature">
-          <div class="feature-icon">💬</div>
+          <div class="feature-icon">♢</div>
           <div>
             <strong>24/7 Support</strong>
             <span>We're here to help</span>
@@ -878,7 +925,7 @@
 
         <div class="section-heading">
           <h2>Shop by Category</h2>
-          <p>Find exactly what you're looking for.</p>
+          <p>Explore our premium collections.</p>
         </div>
 
         <div class="category-grid">
@@ -906,7 +953,7 @@
           <a class="category" href="#">
             <img
               src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=700&q=80"
-              alt="Home"
+              alt="Home and Living"
             />
             <div class="category-overlay">
               <h3>Home & Living →</h3>
@@ -929,21 +976,27 @@
 
     <!-- ================= PRODUCTS ================= -->
 
-    <section id="products" style="background:#fafafa;">
+    <section id="products">
       <div class="container">
 
         <div class="products-header">
-          <h2>Trending Products</h2>
+          <h2>Featured Products</h2>
           <a href="#">View All →</a>
         </div>
 
         <div class="product-grid">
 
-          <!-- Product 1 -->
+          <!-- PRODUCT 1 -->
+
           <article class="product-card">
             <div class="product-image">
               <span class="badge">NEW</span>
-              <button class="heart" onclick="toggleHeart(this)">♡</button>
+
+              <button
+                class="heart"
+                onclick="toggleHeart(this)"
+                aria-label="Add to wishlist"
+              >♡</button>
 
               <img
                 src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
@@ -953,25 +1006,38 @@
 
             <div class="product-info">
               <span class="product-category">Footwear</span>
+
               <h3>Urban Runner Sneakers</h3>
-              <div class="rating">★★★★★ <span>(48)</span></div>
+
+              <div class="rating">
+                ★★★★★ <span>(48)</span>
+              </div>
 
               <div class="price">
                 <strong>$89</strong>
                 <span class="old-price">$120</span>
               </div>
 
-              <button class="add-cart" onclick="addToCart('Urban Runner Sneakers')">
+              <button
+                class="add-cart"
+                onclick="addToCart('Urban Runner Sneakers')"
+              >
                 Add to Cart
               </button>
             </div>
           </article>
 
-          <!-- Product 2 -->
+          <!-- PRODUCT 2 -->
+
           <article class="product-card">
             <div class="product-image">
               <span class="badge">SALE</span>
-              <button class="heart" onclick="toggleHeart(this)">♡</button>
+
+              <button
+                class="heart"
+                onclick="toggleHeart(this)"
+                aria-label="Add to wishlist"
+              >♡</button>
 
               <img
                 src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
@@ -981,69 +1047,102 @@
 
             <div class="product-info">
               <span class="product-category">Electronics</span>
+
               <h3>Minimal Smart Watch</h3>
-              <div class="rating">★★★★★ <span>(92)</span></div>
+
+              <div class="rating">
+                ★★★★★ <span>(92)</span>
+              </div>
 
               <div class="price">
                 <strong>$129</strong>
                 <span class="old-price">$179</span>
               </div>
 
-              <button class="add-cart" onclick="addToCart('Minimal Smart Watch')">
+              <button
+                class="add-cart"
+                onclick="addToCart('Minimal Smart Watch')"
+              >
                 Add to Cart
               </button>
             </div>
           </article>
 
-          <!-- Product 3 -->
+          <!-- PRODUCT 3 -->
+
           <article class="product-card">
             <div class="product-image">
-              <button class="heart" onclick="toggleHeart(this)">♡</button>
+
+              <button
+                class="heart"
+                onclick="toggleHeart(this)"
+                aria-label="Add to wishlist"
+              >♡</button>
 
               <img
                 src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
-                alt="Fashion jacket"
+                alt="Premium jacket"
               />
             </div>
 
             <div class="product-info">
               <span class="product-category">Fashion</span>
+
               <h3>Premium Casual Jacket</h3>
-              <div class="rating">★★★★☆ <span>(36)</span></div>
+
+              <div class="rating">
+                ★★★★☆ <span>(36)</span>
+              </div>
 
               <div class="price">
                 <strong>$74</strong>
               </div>
 
-              <button class="add-cart" onclick="addToCart('Premium Casual Jacket')">
+              <button
+                class="add-cart"
+                onclick="addToCart('Premium Casual Jacket')"
+              >
                 Add to Cart
               </button>
             </div>
           </article>
 
-          <!-- Product 4 -->
+          <!-- PRODUCT 4 -->
+
           <article class="product-card">
             <div class="product-image">
               <span class="badge">HOT</span>
-              <button class="heart" onclick="toggleHeart(this)">♡</button>
+
+              <button
+                class="heart"
+                onclick="toggleHeart(this)"
+                aria-label="Add to wishlist"
+              >♡</button>
 
               <img
                 src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80"
-                alt="Coffee product"
+                alt="Premium coffee"
               />
             </div>
 
             <div class="product-info">
               <span class="product-category">Lifestyle</span>
+
               <h3>Premium Coffee Set</h3>
-              <div class="rating">★★★★★ <span>(74)</span></div>
+
+              <div class="rating">
+                ★★★★★ <span>(74)</span>
+              </div>
 
               <div class="price">
                 <strong>$45</strong>
                 <span class="old-price">$60</span>
               </div>
 
-              <button class="add-cart" onclick="addToCart('Premium Coffee Set')">
+              <button
+                class="add-cart"
+                onclick="addToCart('Premium Coffee Set')"
+              >
                 Add to Cart
               </button>
             </div>
@@ -1061,12 +1160,13 @@
         <div class="promo-box">
 
           <div class="promo-content">
-            <small>Limited Time Offer</small>
+            <small>Exclusive Offer</small>
 
             <h2>Up to 50% Off</h2>
 
             <p>
-              Grab your favorites before the deal disappears.
+              Luxury doesn't have to come at full price.
+              Shop our limited-time offers.
             </p>
           </div>
 
@@ -1082,27 +1182,36 @@
     <!-- ================= NEWSLETTER ================= -->
 
     <section class="newsletter" id="contact">
+
       <div class="container">
 
-        <h2>Stay in the loop.</h2>
+        <h2>Join the VIP list.</h2>
 
         <p>
-          Get exclusive offers, new arrivals, and shopping inspiration.
+          Get exclusive access to new collections,
+          private offers, and premium deals.
         </p>
 
-        <form class="newsletter-form" onsubmit="subscribe(event)">
+        <form
+          class="newsletter-form"
+          onsubmit="subscribe(event)"
+        >
           <input
             type="email"
             placeholder="Enter your email address"
             required
           />
 
-          <button class="btn btn-primary" type="submit">
+          <button
+            class="btn"
+            type="submit"
+          >
             Subscribe
           </button>
         </form>
 
       </div>
+
     </section>
 
   </main>
@@ -1110,6 +1219,7 @@
   <!-- ================= FOOTER ================= -->
 
   <footer>
+
     <div class="container">
 
       <div class="footer-grid">
@@ -1118,59 +1228,67 @@
           <div class="logo">SHOPLY</div>
 
           <p>
-            Your modern destination for quality products,
-            great prices, and a better shopping experience.
+            A premium destination for quality products,
+            exclusive collections, and an exceptional
+            shopping experience.
           </p>
         </div>
 
         <div>
           <h4>Shop</h4>
+
           <ul>
             <li><a href="#">New Arrivals</a></li>
             <li><a href="#">Best Sellers</a></li>
             <li><a href="#">Deals</a></li>
-            <li><a href="#">Categories</a></li>
+            <li><a href="#">Collections</a></li>
           </ul>
         </div>
 
         <div>
           <h4>Company</h4>
+
           <ul>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#">Journal</a></li>
           </ul>
         </div>
 
         <div>
-          <h4>Help</h4>
+          <h4>Support</h4>
+
           <ul>
             <li><a href="#">Shipping</a></li>
             <li><a href="#">Returns</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="#">Help Center</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="copyright">
-        © 2026 Shoply. All rights reserved.
+        © 2026 SHOPLY. All rights reserved.
       </div>
 
     </div>
+
   </footer>
 
-  <!-- Toast notification -->
+  <!-- ================= TOAST ================= -->
+
   <div class="toast" id="toast"></div>
 
   <!-- ================= JAVASCRIPT ================= -->
 
   <script>
+
     let cartCount = 0;
 
     function addToCart(productName) {
+
       cartCount++;
 
       document.getElementById("cartCount").textContent = cartCount;
@@ -1178,36 +1296,54 @@
       showToast(productName + " added to cart!");
     }
 
+
     function toggleHeart(button) {
-      if (button.textContent === "♡") {
+
+      if (button.textContent.trim() === "♡") {
+
         button.textContent = "♥";
-        button.style.color = "#ef4444";
+
+        button.style.color = "#d4af37";
+
       } else {
+
         button.textContent = "♡";
-        button.style.color = "#151515";
+
+        button.style.color = "#ffffff";
       }
     }
 
+
     function showToast(message) {
+
       const toast = document.getElementById("toast");
 
       toast.textContent = message;
+
       toast.classList.add("show");
 
       setTimeout(() => {
+
         toast.classList.remove("show");
+
       }, 2500);
     }
 
+
     function subscribe(event) {
+
       event.preventDefault();
 
-      const email = event.target.querySelector("input").value;
+      const email =
+        event.target.querySelector("input").value;
 
-      showToast("Thanks! " + email + " has been subscribed.");
+      showToast(
+        "Welcome to the VIP list!"
+      );
 
       event.target.reset();
     }
+
   </script>
 
 </body>
