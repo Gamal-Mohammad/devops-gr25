@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Premium black and gold e-commerce store." />
-  <title>SHOPLY — Black & Gold</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="GoalZone — Football news, fixtures, results, teams and latest football updates.">
+
+  <title>GoalZone — Football Hub</title>
 
   <style>
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -14,16 +21,22 @@
     }
 
     :root {
-      --black: #050505;
-      --black-2: #0d0d0d;
-      --black-3: #151515;
-      --gold: #d4af37;
-      --gold-light: #f1d675;
-      --gold-dark: #a88620;
+      --green: #18d26e;
+      --green-dark: #0ca653;
+      --green-light: #70f2a9;
+
+      --black: #050806;
+      --dark: #0a0f0c;
+      --dark-2: #101712;
+      --dark-3: #151e18;
+
       --white: #ffffff;
-      --cream: #f5f0df;
-      --gray: #aaa;
-      --border: rgba(212, 175, 55, 0.25);
+      --text: #e8eee9;
+      --muted: #8f9b93;
+
+      --border: rgba(255,255,255,.09);
+      --red: #ff4d5e;
+      --yellow: #ffc83d;
     }
 
     html {
@@ -31,20 +44,20 @@
     }
 
     body {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      color: var(--white);
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: var(--black);
+      color: var(--text);
       line-height: 1.6;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
-    }
-
-    button,
-    input {
-      font: inherit;
+      color: inherit;
     }
 
     img {
@@ -52,19 +65,53 @@
       width: 100%;
     }
 
+    button,
+    input {
+      font: inherit;
+    }
+
     .container {
       width: min(1180px, 92%);
       margin: auto;
     }
 
-    /* ================= HEADER ================= */
+    /* =====================================================
+       TOP BAR
+    ===================================================== */
+
+    .top-bar {
+      background: #030504;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .top-bar-inner {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .top-links a:hover {
+      color: var(--green);
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(5, 5, 5, 0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(5,8,6,.94);
+      backdrop-filter: blur(15px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -73,135 +120,150 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      gap: 25px;
     }
 
     .logo {
-      font-size: 26px;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 950;
+      font-size: 23px;
+      letter-spacing: -1px;
+    }
+
+    .logo-ball {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #041108;
+      font-size: 18px;
+      box-shadow: 0 0 25px rgba(24,210,110,.25);
+    }
+
+    .logo span {
+      color: var(--green);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 27px;
       list-style: none;
     }
 
     .nav-links a {
-      color: #ddd;
-      font-size: 14px;
-      font-weight: 600;
+      color: #cbd2cd;
+      font-size: 13px;
+      font-weight: 750;
       transition: .2s;
     }
 
     .nav-links a:hover {
-      color: var(--gold);
+      color: var(--green);
     }
 
     .nav-actions {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 9px;
     }
 
-    .icon-btn {
-      width: 42px;
-      height: 42px;
+    .nav-button {
+      height: 39px;
+      padding: 0 14px;
       border: 1px solid var(--border);
-      border-radius: 50%;
       background: transparent;
-      color: var(--white);
+      color: white;
+      border-radius: 6px;
       cursor: pointer;
-      display: grid;
-      place-items: center;
-      font-size: 18px;
-      transition: .2s;
-      position: relative;
+      font-weight: 700;
     }
 
-    .icon-btn:hover {
-      border-color: var(--gold);
-      color: var(--gold);
+    .nav-button:hover {
+      border-color: var(--green);
+      color: var(--green);
     }
 
-    .cart-count {
-      position: absolute;
-      top: -4px;
-      right: -3px;
-      width: 19px;
-      height: 19px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: var(--black);
-      font-size: 11px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-    }
-
-    .menu-btn {
+    .mobile-menu {
       display: none;
     }
 
-    /* ================= HERO ================= */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
-      min-height: 650px;
+      min-height: 590px;
       display: flex;
       align-items: center;
+
       background:
-        radial-gradient(
-          circle at 75% 35%,
-          rgba(212, 175, 55, .16),
-          transparent 32%
+        linear-gradient(
+          90deg,
+          rgba(3,7,4,.98) 0%,
+          rgba(3,7,4,.85) 42%,
+          rgba(3,7,4,.30) 100%
         ),
-        linear-gradient(135deg, #050505, #111);
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1800&q=85");
+
+      background-size: cover;
+      background-position: center;
       border-bottom: 1px solid var(--border);
     }
 
-    .hero-grid {
-      min-height: 600px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 70px;
+    .hero-content {
+      max-width: 650px;
+      padding: 70px 0;
     }
 
-    .eyebrow {
+    .live-label {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--gold);
-      border: 1px solid var(--border);
-      background: rgba(212,175,55,.07);
-      border-radius: 30px;
-      padding: 7px 14px;
+
+      color: var(--green);
       font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-weight: 900;
       letter-spacing: 1px;
+      text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--green);
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      50% {
+        opacity: .35;
+      }
+    }
+
     .hero h1 {
-      font-size: clamp(44px, 5vw, 72px);
-      line-height: 1.02;
-      letter-spacing: -3px;
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: .97;
+      letter-spacing: -4px;
+      font-weight: 950;
       margin-bottom: 22px;
-      max-width: 650px;
     }
 
     .hero h1 span {
-      color: var(--gold);
+      color: var(--green);
     }
 
     .hero p {
-      color: #aaa;
-      font-size: 17px;
-      max-width: 520px;
+      max-width: 550px;
+      color: #b5beb8;
+      font-size: 16px;
       margin-bottom: 30px;
     }
 
@@ -212,449 +274,512 @@
     }
 
     .btn {
+      padding: 13px 21px;
+      border-radius: 6px;
       border: none;
-      border-radius: 7px;
-      padding: 13px 23px;
-      font-weight: 800;
       cursor: pointer;
-      transition: .25s;
+      font-weight: 850;
+      transition: .2s;
       display: inline-flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 8px;
     }
 
-    .btn-primary {
-      background: linear-gradient(
-        135deg,
-        var(--gold-light),
-        var(--gold),
-        var(--gold-dark)
-      );
-      color: #080808;
-      box-shadow: 0 8px 25px rgba(212,175,55,.15);
+    .btn-green {
+      background: var(--green);
+      color: #041108;
     }
 
-    .btn-primary:hover {
+    .btn-green:hover {
+      background: var(--green-light);
       transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(212,175,55,.3);
     }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
+    .btn-dark {
+      background: rgba(0,0,0,.5);
+      color: white;
+      border: 1px solid rgba(255,255,255,.2);
     }
 
-    .btn-outline:hover {
-      background: var(--gold);
-      color: var(--black);
+    .btn-dark:hover {
+      border-color: var(--green);
+      color: var(--green);
     }
 
-    .hero-image {
-      position: relative;
-    }
+    /* =====================================================
+       LIVE MATCH STRIP
+    ===================================================== */
 
-    .hero-image img {
-      height: 480px;
-      object-fit: cover;
-      border-radius: 3px;
-      border: 1px solid var(--border);
-      filter: brightness(.75) saturate(.8);
-      box-shadow: 0 25px 70px rgba(0,0,0,.7);
-    }
-
-    .floating-card {
-      position: absolute;
-      bottom: 25px;
-      left: -25px;
-      background: #101010;
-      border: 1px solid var(--border);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.5);
-    }
-
-    .floating-icon {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-    }
-
-    .floating-card strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .floating-card small {
-      color: var(--gray);
-    }
-
-    /* ================= FEATURES ================= */
-
-    .features {
-      padding: 30px 0;
-      background: var(--black-2);
+    .score-strip {
+      background: var(--dark-2);
       border-bottom: 1px solid var(--border);
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
+    .score-strip-inner {
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
     }
 
-    .feature {
+    .score-title {
+      min-width: 110px;
       display: flex;
       align-items: center;
-      gap: 12px;
-    }
-
-    .feature-icon {
-      color: var(--gold);
-      font-size: 24px;
-    }
-
-    .feature strong {
-      display: block;
-      font-size: 13px;
-    }
-
-    .feature span {
-      color: var(--gray);
+      color: var(--green);
       font-size: 12px;
+      font-weight: 900;
+      border-right: 1px solid var(--border);
     }
 
-    /* ================= SECTIONS ================= */
-
-    section {
-      padding: 80px 0;
+    .match-mini {
+      min-width: 245px;
+      padding: 13px 18px;
+      border-right: 1px solid var(--border);
     }
 
-    .section-heading {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-heading h2 {
-      font-size: 36px;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-
-    .section-heading p {
-      color: var(--gray);
-    }
-
-    /* ================= CATEGORIES ================= */
-
-    #categories {
-      background: var(--black);
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .category {
-      height: 230px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid var(--border);
-      background: var(--black-3);
-    }
-
-    .category img {
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(.6) saturate(.7);
-      transition: .4s;
-    }
-
-    .category:hover img {
-      transform: scale(1.07);
-      filter: brightness(.75) saturate(.9);
-    }
-
-    .category-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      padding: 22px;
-      background: linear-gradient(
-        transparent,
-        rgba(0,0,0,.9)
-      );
-    }
-
-    .category-overlay h3 {
-      color: var(--gold);
-      font-size: 21px;
-    }
-
-    /* ================= PRODUCTS ================= */
-
-    #products {
-      background: #0a0a0a;
-    }
-
-    .products-header {
+    .match-mini-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      color: var(--muted);
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+
+    .match-mini-teams {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .score {
+      color: var(--green);
+      font-weight: 950;
+    }
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
       margin-bottom: 30px;
     }
 
-    .products-header h2 {
-      font-size: 32px;
+    .section-title {
+      font-size: 31px;
+      font-weight: 900;
+      letter-spacing: -1px;
     }
 
-    .products-header a {
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 14px;
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 3px;
     }
 
-    .product-grid {
+    .view-all {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* =====================================================
+       NEWS
+    ===================================================== */
+
+    #news {
+      background: var(--black);
+    }
+
+    .news-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 20px;
     }
 
-    .product-card {
+    .news-card {
+      background: var(--dark-2);
       border: 1px solid var(--border);
-      background: #101010;
       overflow: hidden;
       transition: .25s;
     }
 
-    .product-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(212,175,55,.55);
-      box-shadow: 0 15px 40px rgba(0,0,0,.6);
+    .news-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(24,210,110,.4);
     }
 
-    .product-image {
-      height: 260px;
-      position: relative;
+    .news-image {
+      height: 220px;
       overflow: hidden;
-      background: #161616;
+      position: relative;
     }
 
-    .product-image img {
+    .news-image img {
       height: 100%;
       object-fit: cover;
-      filter: brightness(.72) saturate(.8);
       transition: .4s;
     }
 
-    .product-card:hover .product-image img {
+    .news-card:hover img {
       transform: scale(1.05);
-      filter: brightness(.85) saturate(.9);
     }
 
-    .badge {
+    .news-tag {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--gold);
-      color: #080808;
-      padding: 5px 9px;
-      font-size: 10px;
-      font-weight: 900;
-      z-index: 2;
+      left: 13px;
+      top: 13px;
+
+      background: var(--green);
+      color: #041108;
+
+      padding: 5px 8px;
+      font-size: 9px;
+      font-weight: 950;
+      text-transform: uppercase;
     }
 
-    .heart {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      border: 1px solid var(--border);
-      background: #0c0c0c;
-      color: white;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      font-size: 16px;
-      z-index: 2;
-    }
-
-    .product-info {
+    .news-content {
       padding: 17px;
     }
 
-    .product-category {
-      color: var(--gold);
+    .news-meta {
+      color: var(--green);
       font-size: 10px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      margin-bottom: 7px;
     }
 
-    .product-info h3 {
-      font-size: 16px;
-      margin: 5px 0 8px;
+    .news-content h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 9px;
     }
 
-    .rating {
-      color: var(--gold);
+    .news-content p {
+      color: var(--muted);
       font-size: 12px;
-      margin-bottom: 10px;
     }
 
-    .rating span {
-      color: #777;
+    /* =====================================================
+       FIXTURES
+    ===================================================== */
+
+    #fixtures {
+      background: var(--dark);
     }
 
-    .price {
-      display: flex;
+    .fixture-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
+
+    .fixtures-list {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+    }
+
+    .fixture {
+      min-height: 95px;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border);
+
+      display: grid;
+      grid-template-columns: 95px 1fr 90px;
       align-items: center;
-      gap: 9px;
-      margin-bottom: 14px;
+      gap: 15px;
     }
 
-    .price strong {
-      color: var(--gold);
-      font-size: 19px;
+    .fixture:last-child {
+      border-bottom: none;
     }
 
-    .old-price {
-      color: #777;
-      text-decoration: line-through;
-      font-size: 13px;
-    }
-
-    .add-cart {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid var(--gold);
-      background: transparent;
-      color: var(--gold);
-      border-radius: 4px;
+    .fixture-date {
+      color: var(--muted);
+      font-size: 11px;
       font-weight: 700;
-      cursor: pointer;
+    }
+
+    .fixture-date strong {
+      display: block;
+      color: white;
+      font-size: 12px;
+    }
+
+    .teams {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .team {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .team-score {
+      color: var(--green);
+      font-weight: 950;
+    }
+
+    .fixture-status {
+      text-align: right;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .fixture-status.live {
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    /* =====================================================
+       TABLE
+    ===================================================== */
+
+    .league-table {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+    }
+
+    .table-header {
+      padding: 17px;
+      border-bottom: 1px solid var(--border);
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px 8px;
+      text-align: center;
+      font-size: 11px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    td:first-child,
+    th:first-child {
+      text-align: left;
+      padding-left: 15px;
+    }
+
+    td:first-child {
+      color: white;
+      font-weight: 750;
+    }
+
+    .position {
+      color: var(--green);
+    }
+
+    /* =====================================================
+       TEAMS
+    ===================================================== */
+
+    #teams {
+      background: var(--black);
+    }
+
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .club {
+      padding: 22px 12px;
+      text-align: center;
+      background: var(--dark-2);
+      border: 1px solid var(--border);
       transition: .2s;
     }
 
-    .add-cart:hover {
-      background: var(--gold);
-      color: #050505;
+    .club:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
     }
 
-    /* ================= PROMO ================= */
+    .club-logo {
+      width: 60px;
+      height: 60px;
+      margin: auto auto 12px;
+      border-radius: 50%;
+      background: var(--dark-3);
+      border: 1px solid rgba(24,210,110,.25);
 
-    .promo {
-      padding: 0 0 80px;
-      background: #0a0a0a;
+      display: grid;
+      place-items: center;
+
+      font-size: 26px;
     }
 
-    .promo-box {
-      border: 1px solid var(--gold-dark);
-      background:
-        radial-gradient(
-          circle at 80% 50%,
-          rgba(212,175,55,.18),
-          transparent 35%
-        ),
-        #0d0d0d;
-      color: white;
-      padding: 55px;
+    .club h3 {
+      font-size: 12px;
+    }
+
+    .club span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    /* =====================================================
+       VIDEO / FEATURE
+    ===================================================== */
+
+    .feature-banner {
+      padding: 0 0 75px;
+      background: var(--black);
+    }
+
+    .feature-box {
+      min-height: 300px;
+
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+
+      padding: 45px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5,8,6,.98),
+          rgba(5,8,6,.65),
+          rgba(5,8,6,.2)
+        ),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=80");
+
+      background-size: cover;
+      background-position: center;
+
+      border: 1px solid var(--border);
     }
 
-    .promo-content small {
-      color: var(--gold);
+    .feature-text {
+      max-width: 520px;
+    }
+
+    .feature-text small {
+      color: var(--green);
       text-transform: uppercase;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 1px;
     }
 
-    .promo-content h2 {
-      font-size: 40px;
-      margin: 8px 0;
+    .feature-text h2 {
+      font-size: 36px;
+      line-height: 1.1;
+      margin: 8px 0 12px;
     }
 
-    .promo-content p {
-      color: #aaa;
+    .feature-text p {
+      color: #aeb7b1;
+      font-size: 13px;
+      margin-bottom: 20px;
     }
 
-    /* ================= NEWSLETTER ================= */
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
 
     .newsletter {
-      background: var(--gold);
-      color: var(--black);
+      background:
+        radial-gradient(
+          circle at 50% 0,
+          rgba(24,210,110,.13),
+          transparent 40%
+        ),
+        var(--dark-2);
+
       text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .newsletter h2 {
-      font-size: 34px;
-      margin-bottom: 8px;
+      font-size: 35px;
+      margin-bottom: 6px;
     }
 
     .newsletter p {
-      color: #342b12;
-      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 24px;
     }
 
     .newsletter-form {
-      max-width: 520px;
+      max-width: 510px;
       margin: auto;
+
       display: flex;
-      background: white;
       padding: 5px;
-      border: 2px solid rgba(0,0,0,.25);
+
+      background: #080b09;
+      border: 1px solid var(--border);
     }
 
     .newsletter-form input {
       flex: 1;
+      min-width: 0;
       border: none;
       outline: none;
-      padding: 12px 14px;
-      color: #111;
-      min-width: 0;
+      background: transparent;
+      color: white;
+      padding: 11px 13px;
     }
 
-    .newsletter-form .btn {
-      background: var(--black);
-      color: var(--gold);
-      box-shadow: none;
-    }
-
-    /* ================= FOOTER ================= */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
-      background: #030303;
-      color: white;
+      background: #030504;
       padding: 60px 0 25px;
-      border-top: 1px solid var(--border);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr repeat(3, 1fr);
-      gap: 50px;
-      margin-bottom: 50px;
+      gap: 45px;
+      margin-bottom: 45px;
     }
 
     .footer-brand p {
-      color: #777;
+      color: var(--muted);
+      font-size: 13px;
       max-width: 280px;
-      margin-top: 14px;
-      font-size: 14px;
+      margin-top: 13px;
     }
 
     footer h4 {
-      color: var(--gold);
+      color: white;
+      font-size: 13px;
       margin-bottom: 15px;
     }
 
@@ -663,35 +788,66 @@
     }
 
     footer li {
+      color: var(--muted);
+      font-size: 12px;
       margin-bottom: 9px;
-      color: #777;
-      font-size: 14px;
     }
 
     footer li a:hover {
-      color: var(--gold);
+      color: var(--green);
+    }
+
+    .socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .social {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .social:hover {
+      color: var(--green);
+      border-color: var(--green);
     }
 
     .copyright {
-      border-top: 1px solid #222;
-      padding-top: 22px;
-      color: #555;
-      font-size: 13px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
       text-align: center;
+      color: #58615b;
+      font-size: 11px;
     }
 
-    /* ================= TOAST ================= */
+    /* =====================================================
+       TOAST
+    ===================================================== */
 
     .toast {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--gold);
-      color: #050505;
-      padding: 13px 18px;
-      font-weight: 700;
-      transform: translateY(100px);
+      right: 20px;
+      bottom: 20px;
+
+      background: var(--green);
+      color: #041108;
+
+      padding: 12px 17px;
+      border-radius: 5px;
+
+      font-size: 12px;
+      font-weight: 850;
+
+      transform: translateY(80px);
       opacity: 0;
+
       transition: .3s;
       z-index: 2000;
     }
@@ -701,33 +857,34 @@
       opacity: 1;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
+
       .nav-links {
         display: none;
       }
 
-      .menu-btn {
-        display: grid;
+      .mobile-menu {
+        display: block;
       }
 
-      .hero-grid {
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .news-card:first-child {
+        grid-column: span 2;
+      }
+
+      .fixture-grid {
         grid-template-columns: 1fr;
-        padding: 50px 0;
       }
 
-      .hero-image {
-        order: -1;
-      }
-
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .category-grid,
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .teams-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .footer-grid {
@@ -735,51 +892,65 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+
+      .top-links {
+        display: none;
+      }
+
+      .top-bar-inner {
+        justify-content: center;
+      }
+
+      .navbar {
+        height: 65px;
+      }
+
+      .nav-actions .nav-button:not(.mobile-menu) {
+        display: none;
+      }
+
       .hero {
-        min-height: auto;
+        min-height: 560px;
+        background-position: 65% center;
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 47px;
         letter-spacing: -2px;
-      }
-
-      .hero-image img {
-        height: 350px;
-      }
-
-      .floating-card {
-        left: 10px;
       }
 
       section {
         padding: 55px 0;
       }
 
-      .feature-grid,
-      .category-grid,
-      .product-grid,
-      .footer-grid {
+      .news-grid {
         grid-template-columns: 1fr;
       }
 
-      .category {
-        height: 210px;
+      .news-card:first-child {
+        grid-column: auto;
       }
 
-      .product-image {
-        height: 300px;
+      .news-image {
+        height: 230px;
       }
 
-      .promo-box {
-        padding: 35px 25px;
-        flex-direction: column;
-        align-items: flex-start;
+      .fixture {
+        grid-template-columns: 70px 1fr 55px;
+        padding: 14px;
       }
 
-      .promo-content h2 {
-        font-size: 30px;
+      .teams-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-box {
+        padding: 30px 22px;
+      }
+
+      .feature-text h2 {
+        font-size: 29px;
       }
 
       .newsletter-form {
@@ -790,424 +961,735 @@
       .newsletter-form .btn {
         width: 100%;
       }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- =====================================================
+       TOP BAR
+  ===================================================== -->
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+
+      <span>⚽ THE HOME OF FOOTBALL</span>
+
+      <div class="top-links">
+        <a href="#fixtures">Fixtures</a>
+        <a href="#table">Standings</a>
+        <a href="#news">Latest News</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
   <header>
+
     <div class="container navbar">
 
-      <a href="#" class="logo">SHOPLY</a>
+      <a href="#" class="logo">
+        <div class="logo-ball">⚽</div>
+        GOAL<span>ZONE</span>
+      </a>
 
       <nav>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#deals">Deals</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#news">News</a>
+          </li>
+
+          <li>
+            <a href="#fixtures">Fixtures</a>
+          </li>
+
+          <li>
+            <a href="#table">Standings</a>
+          </li>
+
+          <li>
+            <a href="#teams">Teams</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button class="icon-btn" aria-label="Search">⌕</button>
-        <button class="icon-btn" aria-label="Account">♙</button>
 
-        <button class="icon-btn" aria-label="Shopping cart">
-          🛒
-          <span class="cart-count" id="cartCount">0</span>
+        <button
+          class="nav-button"
+          onclick="showToast('Search coming soon')">
+          🔎
         </button>
 
-        <button class="icon-btn menu-btn" aria-label="Menu">☰</button>
+        <button
+          class="nav-button"
+          onclick="showToast('Login coming soon')">
+          Login
+        </button>
+
+        <button
+          class="nav-button mobile-menu"
+          onclick="showToast('Mobile menu opened')">
+          ☰
+        </button>
+
       </div>
 
     </div>
+
   </header>
 
-  <!-- ================= HERO ================= -->
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
 
   <main>
 
     <section class="hero" id="home">
-      <div class="container hero-grid">
 
-        <div>
-          <div class="eyebrow">✦ Premium Collection</div>
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="live-label">
+            <span class="live-dot"></span>
+            Football never stops
+          </div>
 
           <h1>
-            Luxury shopping,
-            <span>redefined.</span>
+            THE GAME.
+            <br>
+            THE PASSION.
+            <br>
+            <span>THE GOAL.</span>
           </h1>
 
           <p>
-            Discover premium products, exclusive collections,
-            and exceptional deals — all in one sophisticated
-            shopping experience.
+            Your ultimate football destination for breaking news,
+            fixtures, results, standings, transfer stories,
+            and everything happening on the pitch.
           </p>
 
           <div class="hero-buttons">
-            <a href="#products" class="btn btn-primary">
-              Shop Now →
+
+            <a
+              href="#fixtures"
+              class="btn btn-green">
+              View Fixtures →
             </a>
 
-            <a href="#categories" class="btn btn-outline">
-              Explore Collection
+            <a
+              href="#news"
+              class="btn btn-dark">
+              Latest News
             </a>
-          </div>
-        </div>
 
-        <div class="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
-            alt="Luxury fashion store"
-          />
-
-          <div class="floating-card">
-            <div class="floating-icon">✓</div>
-            <div>
-              <strong>Premium Quality</strong>
-              <small>Curated just for you</small>
-            </div>
           </div>
+
         </div>
 
       </div>
+
     </section>
 
-    <!-- ================= FEATURES ================= -->
+    <!-- =====================================================
+         LIVE SCORES
+    ===================================================== -->
 
-    <section class="features">
-      <div class="container feature-grid">
+    <div class="score-strip">
 
-        <div class="feature">
-          <div class="feature-icon">✦</div>
-          <div>
-            <strong>Premium Quality</strong>
-            <span>Carefully selected products</span>
-          </div>
+      <div class="container score-strip-inner">
+
+        <div class="score-title">
+          🔴 LIVE
         </div>
 
-        <div class="feature">
-          <div class="feature-icon">🚚</div>
-          <div>
-            <strong>Free Shipping</strong>
-            <span>On orders over $50</span>
+        <div class="match-mini">
+
+          <div class="match-mini-top">
+            <span>Premier League</span>
+            <span>72'</span>
           </div>
+
+          <div class="match-mini-teams">
+            <span>Arsenal</span>
+            <span class="score">2 - 1</span>
+            <span>Chelsea</span>
+          </div>
+
         </div>
 
-        <div class="feature">
-          <div class="feature-icon">🔒</div>
-          <div>
-            <strong>Secure Payment</strong>
-            <span>100% protected checkout</span>
+        <div class="match-mini">
+
+          <div class="match-mini-top">
+            <span>La Liga</span>
+            <span>HT</span>
           </div>
+
+          <div class="match-mini-teams">
+            <span>Barcelona</span>
+            <span class="score">1 - 0</span>
+            <span>Sevilla</span>
+          </div>
+
         </div>
 
-        <div class="feature">
-          <div class="feature-icon">♢</div>
-          <div>
-            <strong>24/7 Support</strong>
-            <span>We're here to help</span>
+        <div class="match-mini">
+
+          <div class="match-mini-top">
+            <span>Champions League</span>
+            <span>FT</span>
           </div>
+
+          <div class="match-mini-teams">
+            <span>Madrid</span>
+            <span class="score">3 - 2</span>
+            <span>Inter</span>
+          </div>
+
         </div>
 
       </div>
-    </section>
 
-    <!-- ================= CATEGORIES ================= -->
+    </div>
 
-    <section id="categories">
+    <!-- =====================================================
+         NEWS
+    ===================================================== -->
+
+    <section id="news">
+
       <div class="container">
 
-        <div class="section-heading">
-          <h2>Shop by Category</h2>
-          <p>Explore our premium collections.</p>
-        </div>
+        <div class="section-header">
 
-        <div class="category-grid">
+          <div>
+            <h2 class="section-title">
+              Latest Football News
+            </h2>
 
-          <a class="category" href="#">
-            <img
-              src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80"
-              alt="Fashion"
-            />
-            <div class="category-overlay">
-              <h3>Fashion →</h3>
-            </div>
-          </a>
-
-          <a class="category" href="#">
-            <img
-              src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=80"
-              alt="Electronics"
-            />
-            <div class="category-overlay">
-              <h3>Electronics →</h3>
-            </div>
-          </a>
-
-          <a class="category" href="#">
-            <img
-              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=700&q=80"
-              alt="Home and Living"
-            />
-            <div class="category-overlay">
-              <h3>Home & Living →</h3>
-            </div>
-          </a>
-
-          <a class="category" href="#">
-            <img
-              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-              alt="Shoes"
-            />
-            <div class="category-overlay">
-              <h3>Shoes →</h3>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PRODUCTS ================= -->
-
-    <section id="products">
-      <div class="container">
-
-        <div class="products-header">
-          <h2>Featured Products</h2>
-          <a href="#">View All →</a>
-        </div>
-
-        <div class="product-grid">
-
-          <!-- PRODUCT 1 -->
-
-          <article class="product-card">
-            <div class="product-image">
-              <span class="badge">NEW</span>
-
-              <button
-                class="heart"
-                onclick="toggleHeart(this)"
-                aria-label="Add to wishlist"
-              >♡</button>
-
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-                alt="Running shoes"
-              />
-            </div>
-
-            <div class="product-info">
-              <span class="product-category">Footwear</span>
-
-              <h3>Urban Runner Sneakers</h3>
-
-              <div class="rating">
-                ★★★★★ <span>(48)</span>
-              </div>
-
-              <div class="price">
-                <strong>$89</strong>
-                <span class="old-price">$120</span>
-              </div>
-
-              <button
-                class="add-cart"
-                onclick="addToCart('Urban Runner Sneakers')"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <!-- PRODUCT 2 -->
-
-          <article class="product-card">
-            <div class="product-image">
-              <span class="badge">SALE</span>
-
-              <button
-                class="heart"
-                onclick="toggleHeart(this)"
-                aria-label="Add to wishlist"
-              >♡</button>
-
-              <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
-                alt="Smart watch"
-              />
-            </div>
-
-            <div class="product-info">
-              <span class="product-category">Electronics</span>
-
-              <h3>Minimal Smart Watch</h3>
-
-              <div class="rating">
-                ★★★★★ <span>(92)</span>
-              </div>
-
-              <div class="price">
-                <strong>$129</strong>
-                <span class="old-price">$179</span>
-              </div>
-
-              <button
-                class="add-cart"
-                onclick="addToCart('Minimal Smart Watch')"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <!-- PRODUCT 3 -->
-
-          <article class="product-card">
-            <div class="product-image">
-
-              <button
-                class="heart"
-                onclick="toggleHeart(this)"
-                aria-label="Add to wishlist"
-              >♡</button>
-
-              <img
-                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
-                alt="Premium jacket"
-              />
-            </div>
-
-            <div class="product-info">
-              <span class="product-category">Fashion</span>
-
-              <h3>Premium Casual Jacket</h3>
-
-              <div class="rating">
-                ★★★★☆ <span>(36)</span>
-              </div>
-
-              <div class="price">
-                <strong>$74</strong>
-              </div>
-
-              <button
-                class="add-cart"
-                onclick="addToCart('Premium Casual Jacket')"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-
-          <!-- PRODUCT 4 -->
-
-          <article class="product-card">
-            <div class="product-image">
-              <span class="badge">HOT</span>
-
-              <button
-                class="heart"
-                onclick="toggleHeart(this)"
-                aria-label="Add to wishlist"
-              >♡</button>
-
-              <img
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80"
-                alt="Premium coffee"
-              />
-            </div>
-
-            <div class="product-info">
-              <span class="product-category">Lifestyle</span>
-
-              <h3>Premium Coffee Set</h3>
-
-              <div class="rating">
-                ★★★★★ <span>(74)</span>
-              </div>
-
-              <div class="price">
-                <strong>$45</strong>
-                <span class="old-price">$60</span>
-              </div>
-
-              <button
-                class="add-cart"
-                onclick="addToCart('Premium Coffee Set')"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROMO ================= -->
-
-    <section class="promo" id="deals">
-      <div class="container">
-
-        <div class="promo-box">
-
-          <div class="promo-content">
-            <small>Exclusive Offer</small>
-
-            <h2>Up to 50% Off</h2>
-
-            <p>
-              Luxury doesn't have to come at full price.
-              Shop our limited-time offers.
+            <p class="section-subtitle">
+              Everything happening around the football world.
             </p>
           </div>
 
-          <a href="#products" class="btn btn-primary">
-            Shop Deals →
+          <a href="#" class="view-all">
+            View All →
+          </a>
+
+        </div>
+
+        <div class="news-grid">
+
+          <article class="news-card">
+
+            <div class="news-image">
+
+              <span class="news-tag">
+                Breaking
+              </span>
+
+              <img
+                src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80"
+                alt="Football match"
+              >
+
+            </div>
+
+            <div class="news-content">
+
+              <div class="news-meta">
+                Transfer News · 2h ago
+              </div>
+
+              <h3>
+                Transfer window heats up as Europe's biggest clubs
+                prepare for major moves
+              </h3>
+
+              <p>
+                Clubs across Europe are preparing for an intense
+                transfer battle as the new season approaches.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="news-card">
+
+            <div class="news-image">
+
+              <span class="news-tag">
+                Premier League
+              </span>
+
+              <img
+                src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=800&q=80"
+                alt="Football player"
+              >
+
+            </div>
+
+            <div class="news-content">
+
+              <div class="news-meta">
+                Matchday · 4h ago
+              </div>
+
+              <h3>
+                Title race goes down to the wire
+              </h3>
+
+              <p>
+                The final weeks of the season promise
+                drama at both ends of the table.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="news-card">
+
+            <div class="news-image">
+
+              <span class="news-tag">
+                Champions League
+              </span>
+
+              <img
+                src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80"
+                alt="Football stadium"
+              >
+
+            </div>
+
+            <div class="news-content">
+
+              <div class="news-meta">
+                Europe · 6h ago
+              </div>
+
+              <h3>
+                Europe's elite prepare for another unforgettable night
+              </h3>
+
+              <p>
+                The biggest clubs are ready for another
+                chapter of European football.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         FIXTURES + TABLE
+    ===================================================== -->
+
+    <section id="fixtures">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div>
+            <h2 class="section-title">
+              Fixtures & Standings
+            </h2>
+
+            <p class="section-subtitle">
+              Follow the biggest matches and league action.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="fixture-grid">
+
+          <!-- FIXTURES -->
+
+          <div class="fixtures-list">
+
+            <div class="fixture">
+
+              <div class="fixture-date">
+                SAT
+                <strong>SEP 12</strong>
+              </div>
+
+              <div class="teams">
+
+                <div class="team">
+                  <span>Manchester United</span>
+                  <span>—</span>
+                </div>
+
+                <div class="team">
+                  <span>Liverpool</span>
+                  <span>—</span>
+                </div>
+
+              </div>
+
+              <div class="fixture-status">
+                15:00
+              </div>
+
+            </div>
+
+            <div class="fixture">
+
+              <div class="fixture-date">
+                SUN
+                <strong>SEP 13</strong>
+              </div>
+
+              <div class="teams">
+
+                <div class="team">
+                  <span>Arsenal</span>
+                  <span>2</span>
+                </div>
+
+                <div class="team">
+                  <span>Chelsea</span>
+                  <span class="team-score">1</span>
+                </div>
+
+              </div>
+
+              <div class="fixture-status live">
+                LIVE
+              </div>
+
+            </div>
+
+            <div class="fixture">
+
+              <div class="fixture-date">
+                SUN
+                <strong>SEP 13</strong>
+              </div>
+
+              <div class="teams">
+
+                <div class="team">
+                  <span>Barcelona</span>
+                  <span>—</span>
+                </div>
+
+                <div class="team">
+                  <span>Real Madrid</span>
+                  <span>—</span>
+                </div>
+
+              </div>
+
+              <div class="fixture-status">
+                20:00
+              </div>
+
+            </div>
+
+            <div class="fixture">
+
+              <div class="fixture-date">
+                MON
+                <strong>SEP 14</strong>
+              </div>
+
+              <div class="teams">
+
+                <div class="team">
+                  <span>Inter Milan</span>
+                  <span>—</span>
+                </div>
+
+                <div class="team">
+                  <span>Juventus</span>
+                  <span>—</span>
+                </div>
+
+              </div>
+
+              <div class="fixture-status">
+                19:45
+              </div>
+
+            </div>
+
+            <div class="fixture">
+
+              <div class="fixture-date">
+                TUE
+                <strong>SEP 15</strong>
+              </div>
+
+              <div class="teams">
+
+                <div class="team">
+                  <span>Bayern Munich</span>
+                  <span>—</span>
+                </div>
+
+                <div class="team">
+                  <span>Dortmund</span>
+                  <span>—</span>
+                </div>
+
+              </div>
+
+              <div class="fixture-status">
+                20:30
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- TABLE -->
+
+          <div
+            class="league-table"
+            id="table">
+
+            <div class="table-header">
+              Premier League
+            </div>
+
+            <table>
+
+              <thead>
+
+                <tr>
+                  <th>#</th>
+                  <th>Team</th>
+                  <th>Pts</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td class="position">1</td>
+                  <td>Arsenal</td>
+                  <td>86</td>
+                </tr>
+
+                <tr>
+                  <td class="position">2</td>
+                  <td>Liverpool</td>
+                  <td>83</td>
+                </tr>
+
+                <tr>
+                  <td class="position">3</td>
+                  <td>Man City</td>
+                  <td>79</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Chelsea</td>
+                  <td>72</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>Newcastle</td>
+                  <td>66</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>Villa</td>
+                  <td>62</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         TEAMS
+    ===================================================== -->
+
+    <section id="teams">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div>
+            <h2 class="section-title">
+              Popular Teams
+            </h2>
+
+            <p class="section-subtitle">
+              Explore the clubs you follow.
+            </p>
+          </div>
+
+          <a href="#" class="view-all">
+            All Teams →
+          </a>
+
+        </div>
+
+        <div class="teams-grid">
+
+          <a href="#" class="club">
+            <div class="club-logo">🔴</div>
+            <h3>Arsenal</h3>
+            <span>England</span>
+          </a>
+
+          <a href="#" class="club">
+            <div class="club-logo">🔵</div>
+            <h3>Chelsea</h3>
+            <span>England</span>
+          </a>
+
+          <a href="#" class="club">
+            <div class="club-logo">🔴</div>
+            <h3>Liverpool</h3>
+            <span>England</span>
+          </a>
+
+          <a href="#" class="club">
+            <div class="club-logo">⚪</div>
+            <h3>Real Madrid</h3>
+            <span>Spain</span>
+          </a>
+
+          <a href="#" class="club">
+            <div class="club-logo">🔵</div>
+            <h3>Barcelona</h3>
+            <span>Spain</span>
+          </a>
+
+          <a href="#" class="club">
+            <div class="club-logo">⚫</div>
+            <h3>Inter Milan</h3>
+            <span>Italy</span>
           </a>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- ================= NEWSLETTER ================= -->
+    <!-- =====================================================
+         FEATURE
+    ===================================================== -->
 
-    <section class="newsletter" id="contact">
+    <section class="feature-banner">
 
       <div class="container">
 
-        <h2>Join the VIP list.</h2>
+        <div class="feature-box">
+
+          <div class="feature-text">
+
+            <small>
+              Matchday Stories
+            </small>
+
+            <h2>
+              More than a game.
+              It's a way of life.
+            </h2>
+
+            <p>
+              From packed stadiums to unforgettable goals,
+              follow the moments that make football special.
+            </p>
+
+            <a href="#news" class="btn btn-green">
+              Explore Stories →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         NEWSLETTER
+    ===================================================== -->
+
+    <section
+      class="newsletter"
+      id="contact">
+
+      <div class="container">
+
+        <h2>
+          Never miss a goal.
+        </h2>
 
         <p>
-          Get exclusive access to new collections,
-          private offers, and premium deals.
+          Get the latest football news, scores and
+          transfer updates straight to your inbox.
         </p>
 
         <form
           class="newsletter-form"
-          onsubmit="subscribe(event)"
-        >
+          onsubmit="subscribe(event)">
+
           <input
             type="email"
-            placeholder="Enter your email address"
+            placeholder="Your email address"
             required
-          />
+          >
 
           <button
-            class="btn"
             type="submit"
-          >
+            class="btn btn-green">
             Subscribe
           </button>
+
         </form>
 
       </div>
@@ -1216,7 +1698,9 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
 
   <footer>
 
@@ -1225,98 +1709,97 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <div class="logo">SHOPLY</div>
+
+          <a href="#" class="logo">
+            <div class="logo-ball">⚽</div>
+            GOAL<span>ZONE</span>
+          </a>
 
           <p>
-            A premium destination for quality products,
-            exclusive collections, and an exceptional
-            shopping experience.
+            Your home for football news, fixtures,
+            results, standings and the stories behind
+            the beautiful game.
           </p>
+
+          <div class="socials">
+
+            <a href="#" class="social">𝕏</a>
+            <a href="#" class="social">f</a>
+            <a href="#" class="social">▶</a>
+            <a href="#" class="social">◎</a>
+
+          </div>
+
         </div>
 
         <div>
-          <h4>Shop</h4>
+
+          <h4>Football</h4>
 
           <ul>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Best Sellers</a></li>
-            <li><a href="#">Deals</a></li>
-            <li><a href="#">Collections</a></li>
+            <li><a href="#news">Latest News</a></li>
+            <li><a href="#fixtures">Fixtures</a></li>
+            <li><a href="#fixtures">Results</a></li>
+            <li><a href="#table">Standings</a></li>
           </ul>
+
         </div>
 
         <div>
+
+          <h4>Competitions</h4>
+
+          <ul>
+            <li><a href="#">Premier League</a></li>
+            <li><a href="#">Champions League</a></li>
+            <li><a href="#">La Liga</a></li>
+            <li><a href="#">Serie A</a></li>
+          </ul>
+
+        </div>
+
+        <div>
+
           <h4>Company</h4>
 
           <ul>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Journal</a></li>
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">Privacy</a></li>
           </ul>
-        </div>
 
-        <div>
-          <h4>Support</h4>
-
-          <ul>
-            <li><a href="#">Shipping</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Help Center</a></li>
-          </ul>
         </div>
 
       </div>
 
       <div class="copyright">
-        © 2026 SHOPLY. All rights reserved.
+        © 2026 GOALZONE. All rights reserved.
       </div>
 
     </div>
 
   </footer>
 
-  <!-- ================= TOAST ================= -->
+  <!-- =====================================================
+       TOAST
+  ===================================================== -->
 
-  <div class="toast" id="toast"></div>
+  <div
+    class="toast"
+    id="toast">
+  </div>
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
 
   <script>
 
-    let cartCount = 0;
-
-    function addToCart(productName) {
-
-      cartCount++;
-
-      document.getElementById("cartCount").textContent = cartCount;
-
-      showToast(productName + " added to cart!");
-    }
-
-
-    function toggleHeart(button) {
-
-      if (button.textContent.trim() === "♡") {
-
-        button.textContent = "♥";
-
-        button.style.color = "#d4af37";
-
-      } else {
-
-        button.textContent = "♡";
-
-        button.style.color = "#ffffff";
-      }
-    }
-
-
     function showToast(message) {
 
-      const toast = document.getElementById("toast");
+      const toast =
+        document.getElementById("toast");
 
       toast.textContent = message;
 
@@ -1327,21 +1810,19 @@
         toast.classList.remove("show");
 
       }, 2500);
-    }
 
+    }
 
     function subscribe(event) {
 
       event.preventDefault();
 
-      const email =
-        event.target.querySelector("input").value;
-
       showToast(
-        "Welcome to the VIP list!"
+        "You're on the list! ⚽"
       );
 
       event.target.reset();
+
     }
 
   </script>
